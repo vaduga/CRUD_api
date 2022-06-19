@@ -1,0 +1,39 @@
+{
+  "name": "crud_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx jest /__tests__/test.js",
+    "start:dev": "npm run dev",
+    "start:prod": "npm run clean:dist && npm run prod && node ./dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "prod": "npx tsc ./src/*.ts --outDir ./dist && node ./dist/index.js",
+    "clean": "rm -rf ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaduga/CRUD_api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vaduga/CRUD_api/issues"
+  },
+  "homepage": "https://github.com/vaduga/CRUD_api#readme",
+  "devDependencies": {
+    "@types/jest": "^28.1.2",
+    "@types/node": "^18.0.0",
+    "@types/uuid": "^8.3.4",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
+    "jest": "^28.1.1",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
