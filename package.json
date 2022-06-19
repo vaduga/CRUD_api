@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx jest /__tests__/test.js",
+    "test": "npm run build && npx jest /__tests__/test.js",
     "start:dev": "npm run dev",
     "start:prod": "npm run clean:dist && npm run prod && node ./dist/index.js",
     "dev": "nodemon src/index.ts",
-    "prod": "npx tsc ./src/*.ts --outDir ./dist && node ./dist/index.js",
-    "clean": "rm -rf ./dist"
+    "prod": "npm run build && node ./dist/index.js",
+    "clean": "rm -rf ./dist",
+    "build": "npx tsc ./src/*.ts --outDir ./dist"
   },
   "repository": {
     "type": "git",
